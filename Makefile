@@ -6,7 +6,7 @@
 #    By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 08:46:55 by jrenault          #+#    #+#              #
-#    Updated: 2023/02/16 10:06:11 by jrenault         ###   ########lyon.fr    #
+#    Updated: 2023/02/18 10:59:21 by jrenault         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ HEADERS_WITH_PATH		= $(addprefix $(HEADER_DIR),$(HEADER_FILE))
 
 DIR						= src/
 SRC			 			= 	main.c \
+							check_error.c \
 
 OBJECTS			    	= ${addprefix ${BUILD_DIR},${SRC:.c=.o}}
 	
