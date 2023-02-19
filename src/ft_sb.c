@@ -6,7 +6,8 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/18 10:46:47 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/18 10:46:48 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/02/19 15:12:16 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
