@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:19:02 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/19 16:11:46 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/02/20 10:55:47 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ typedef struct s_p_list
 	int				value;
 	struct s_p_list	*next;
 }			t_push_swap;
+
+t_push_swap	*empty_list(void)
+{
+	return (NULL);
+}
+
+int	is_empty_list(t_push_swap *lst)
+{
+	return (lst == NULL);
+}
 
 int	createlist(t_push_swap **lst, int value)
 {
@@ -53,18 +63,19 @@ void	printlist(t_push_swap **lst)
 	t_push_swap	*tmp;
 
 	tmp = *lst;
-	while (tmp->next)
+	while (tmp)
 	{
 		printf("%d\n", tmp->value);
 		tmp = tmp->next;
 	}
-	printf("%d\n", tmp->value);
+//	printf("%d\n", tmp->value);
 }
 
 int	main(void)
 {
 	t_push_swap	*list;
 
+	list = NULL;
 	if (createlist(&list, 5))
 		return (EXIT_FAILURE);
 	if (addtolist(&list, 10))

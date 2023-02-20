@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/19 15:25:44 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/02/20 10:35:32 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 
 typedef struct s_p_list
 {
- 	int				value;
- 	struct s_p_list	*next;
- }			t_push_swap;
+	int				value;
+	struct s_p_list	*next;
+}			t_push_swap;
 
 int	main(int argc, char **argv);
 int	check_error(char **argv);
