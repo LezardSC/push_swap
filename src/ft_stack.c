@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_stack.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/22 08:29:17 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/02/23 14:03:20 by jrenault          #+#    #+#             */
+/*   Updated: 2023/02/23 14:16:07 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "limits.h"
-
-# include "../libft/libft.h"
-
-typedef struct s_p_list
+void	ft_stack(t_ps **lst, int content)
 {
-	int				content;
-	struct s_p_list	*next;
-}			t_ps;
+	t_ps	*tmp;
 
-int	main(int argc, char **argv);
-int	check_error(char **argv);
-
-#endif
+	tmp = malloc(sizeof(t_ps));
+	if (!tmp)
+		exit(0);
+	tmp->content = content;
+	ft_lstadd_front(lst, tmp);
+}
