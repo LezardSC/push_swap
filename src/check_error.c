@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:24:16 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/18 14:27:57 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/02/25 14:58:19 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static int	check_only_numbers(char **argv)
 	{
 		while (argv[i][j])
 		{
-			if (argv[i][j] > '9' || argv[i][j] < '0')
+			if ((argv[i][j] > '9' || argv[i][j] < '0') && argv[i][0] != '-')
 				return (1);
 			j++;
 		}
@@ -70,10 +70,7 @@ static int	check_int(char **argv)
 	while (argv[i])
 	{
 		if (ft_atoi_push_swap(argv[i]) > INT_MAX)
-		{
-			ft_printf("test\n");
 			return (1);
-		}
 		i++;
 	}
 	return (0);

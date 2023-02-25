@@ -1,41 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 09:19:04 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/25 14:46:53 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/02/25 14:46:00 by jrenault          #+#    #+#             */
+/*   Updated: 2023/02/25 14:51:44 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_lstadd_front_ps(t_ps **lst, t_ps *new)
 {
-	t_ps	*a;
-//	t_ps	*b;
-	int		content;
-
-	if (argc < 2)
-		return (0);
-	if (check_error(argv) == 1)
-	{
-		ft_printf("Error\n");
-		return (0);
-	}
-	a = NULL;
-//	b = NULL;
-	while (--argc > 0)
-	{
-		content = atoi(argv[argc]);
-		ft_stack(&a, content);
-	}
-	while (a)
-	{
-		ft_printf("%d\n", a->content);
-		a = a->next;
-	}
-	return (0);
+	new->next = *lst;
+	*lst = new;
 }

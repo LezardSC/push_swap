@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:03:20 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/23 14:16:07 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/02/25 14:51:57 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ void	ft_stack(t_ps **lst, int content)
 	if (!tmp)
 		exit(0);
 	tmp->content = content;
-	ft_lstadd_front(lst, tmp);
+	ft_lstadd_front_ps(lst, tmp);
 }
