@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_radix.c                                         :+:      :+:    :+:   */
+/*   nb_to_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/27 12:50:37 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/28 15:09:01 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/02/28 07:39:32 by jrenault          #+#    #+#             */
+/*   Updated: 2023/02/28 15:09:52 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_radix(t_ps **a, t_ps **b)
+	/*
+	si b != NULL
+	on met le content de a dans b.
+	ensuite si content a > content b
+	content a se met derrière content b
+	sinon si content a < content b
+	content a se met devant content b
+
+	on défile à chaque fois en repartant du début, comme ça on trie direct.
+	C'est simple en fait. On revient toujours au début de la liste et si
+	c'est inférieur on avance d'un cran et on compare à nouveau.
+	*/
+
+int	nb_to_index(t_ps **a, t_ps **b)
 {
 	(void)a;
 	(void)b;

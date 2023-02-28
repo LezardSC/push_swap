@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/26 16:29:06 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/02/28 15:08:46 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int		main(int argc, char **argv);
 int		check_error(char **argv);
 void	ft_stack(t_ps **lst, int content);
 void	ft_lstadd_front_ps(t_ps **lst, t_ps *new);
+void	ft_lstadd_back_ps(t_ps **lst, t_ps *new);
+t_ps	*ft_lstlast_ps(t_ps *lst);
 void	ft_sa(t_ps **a);
 void	ft_sb(t_ps **b);
 void	ft_ss(t_ps **a, t_ps **b);
