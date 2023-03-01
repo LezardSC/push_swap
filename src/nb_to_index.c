@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 07:39:32 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/28 15:09:52 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/03/01 18:54:38 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,11 @@
 	c'est inférieur on avance d'un cran et on compare à nouveau.
 	*/
 
-int	nb_to_index(t_ps **a, t_ps **b)
+void	nb_to_index(t_ps **a, t_ps **b)
 {
-	(void)a;
-	(void)b;
+	t_ps	tmp;
+
+	if (!a || !(*a))
+		return ;
+	
 }
