@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_swap_int.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 20:54:11 by jrenault          #+#    #+#             */
-/*   Updated: 2022/11/16 08:37:50 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/03/17 14:27:26 by lezard            #+#    #+#             */
+/*   Updated: 2023/03/17 14:27:28 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_swap(int *a, int *b)
+void	ft_swap_int(int *a, int *b)
 {
 	int	c;
 

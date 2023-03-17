@@ -3,65 +3,61 @@
 /*                                                        :::      ::::::::   */
 /*   nb_to_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 07:39:32 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/01 18:54:38 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/03/17 16:21:31 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-	/*
-	si b != NULL
-	on met le content de a dans b.
-	ensuite si content a > content b
-	content a se met derrière content b
-	sinon si content a < content b
-	content a se met devant content b
+static t_ps	*copy_list(t_ps *lst)
+{
+	t_ps	*new_list;
 
-	on défile à chaque fois en repartant du début, comme ça on trie direct.
-	C'est simple en fait. On revient toujours au début de la liste et si
-	c'est inférieur on avance d'un cran et on compare à nouveau.
-	*/
+	if (!lst)
+		return ;
+	new_list = malloc(sizeof(t_ps));
+	new_list->content = lst->content;
+	new_list->next = copy_list(lst->next);
+	return (new_list);
+}
 
-void	bubble_swap(t_ps *head)
+static void	bubble_swap(t_ps **head)
 {
 	t_ps	*lst1;
 	t_ps	*lst2;
 	int		switched;
 
-	if (head == NULL || head->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return ;
 	switched = 1;
 	lst2 = NULL;
-	//On utilise switched comme un bouton pour être sûr
-	//que la liste est parcourue au moins une fois même
-	//si elle est déjà triée.
 	while (switched)
 	{
 		switched = 0;
-		lst1 = head;
+		lst1 = *head;
 		while (lst1->next != lst2)
 		{
 			if (lst1->content > lst1->next->content)
 			{
-				ft_swap(lst1->content, lst1->next->content);
+				ft_swap_int(&lst1->content, &lst1->next->content);
 				switched = 1;
 			}
 			lst1 = lst1->next;
 		}
 			lst2 = lst1;
 	}
-	
-
 }
 
-void	nb_to_index(t_ps **a, t_ps **b)
+void	nb_to_index(t_ps **a)
 {
-	t_ps	tmp;
+	t_ps	*sorted_list;
 
 	if (!a || !(*a))
 		return ;
-	ft_push(b, a);
+	sorted_list = copy_list(a);
+	bubble_swap(sorted_list);
+	change_into_index(a, sorted_list);
 }

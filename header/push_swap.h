@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/01 18:19:23 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/03/17 14:21:29 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void	ft_rr(t_ps **a, t_ps **b);
 void	ft_rra(t_ps **a);
 void	ft_rrb(t_ps **b);
 void	ft_rrr(t_ps **a, t_ps **b);
-void	nb_to_index(t_ps **a, t_ps **b);
+void	nb_to_index(t_ps **a);
 
 #endif
