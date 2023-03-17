@@ -26,6 +26,8 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
+void			*free_tab(char **tab);
+void			*free_tab_void(void **tab);
 int				ft_atoi(const char *str);
 void			*ft_bzero(void *pointer, size_t n);
 void			*ft_calloc( size_t elCount, size_t elSize);
@@ -81,9 +83,8 @@ char			*ft_strnstr(const char *haystack,
 char			*ft_strrchr(const char *string, int searchedCh);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
+void			ft_swap(int *a, int *b);
 int				ft_tolower(int ch);
 int				ft_toupper(int ch);
-void			*free_tab(char **tab);
-void			*free_tab_void(void **tab);
 
 #endif
