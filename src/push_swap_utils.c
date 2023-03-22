@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/25 14:46:00 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/01 18:19:06 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/03/22 17:24:06 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,17 @@ void	ft_lstdelone_ps(t_list *lst, void (*del)(void *))
 		return ;
 	(*del)(lst->content);
 	free(lst);
+}
+
+int	ft_lstsize_ps(t_ps *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

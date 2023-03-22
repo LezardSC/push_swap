@@ -6,18 +6,57 @@
 /*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 07:39:32 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/17 16:21:31 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/03/22 17:38:09 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static	void	change_into_index(t_ps **a, int	*array)
+{
+	int		i;
+	t_ps	*tmp;
+
+	tmp = *a;
+	while (tmp->next != NULL)
+	{
+		i = 0;
+		while (array[i])
+		{
+			if (tmp->content == array[i])
+			{
+				tmp->content = i;
+				tmp = tmp->next;
+			}
+			i++;
+		}
+	}
+}
+
+static int	*ft_linked_list_to_array(t_ps *lst_index, int size)
+{
+	t_ps	*tmp;
+	int		*array;
+	int		i;
+
+	tmp = lst_index;
+	array = malloc(sizeof(int) * size + 1);
+	i = 0;
+	while (tmp != NULL)
+	{
+		array[i] = tmp->content;
+		tmp = tmp->next;
+		i++;
+	}
+	return (array);
+}
 
 static t_ps	*copy_list(t_ps *lst)
 {
 	t_ps	*new_list;
 
 	if (!lst)
-		return ;
+		return (NULL);
 	new_list = malloc(sizeof(t_ps));
 	new_list->content = lst->content;
 	new_list->next = copy_list(lst->next);
@@ -51,13 +90,19 @@ static void	bubble_swap(t_ps **head)
 	}
 }
 
-void	nb_to_index(t_ps **a)
+t_ps	*nb_to_index(t_ps **a)
 {
 	t_ps	*sorted_list;
+	int		*index_lst;
+	int		size_array;
 
 	if (!a || !(*a))
-		return ;
-	sorted_list = copy_list(a);
-	bubble_swap(sorted_list);
-	change_into_index(a, sorted_list);
+		return (NULL);
+	size_array = ft_lstsize_ps(*a);
+	index_lst = malloc(sizeof(int) * size_array + 1);
+	sorted_list = copy_list(*a);
+	bubble_swap(&sorted_list);
+	index_lst = ft_linked_list_to_array(sorted_list, size_array);
+	change_into_index(a, index_lst);
+	return (sorted_list);
 }

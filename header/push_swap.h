@@ -6,7 +6,7 @@
 /*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/17 14:21:29 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/03/22 17:25:37 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,11 @@ typedef struct s_push_swap
 int		main(int argc, char **argv);
 int		check_error(char **argv);
 void	ft_stack(t_ps **lst, int content);
+int		ft_lstsize_ps(t_ps *lst);
 void	ft_lstadd_front_ps(t_ps **lst, t_ps *new);
 void	ft_lstadd_back_ps(t_ps **lst, t_ps *new);
-t_ps	*ft_lstlast_ps(t_ps *lst);
 void	ft_lstdelone_ps(t_list *lst, void (*del)(void *));
+t_ps	*ft_lstlast_ps(t_ps *lst);
 void	ft_sa(t_ps **a);
 void	ft_sb(t_ps **b);
 void	ft_ss(t_ps **a, t_ps **b);
@@ -41,6 +42,6 @@ void	ft_rr(t_ps **a, t_ps **b);
 void	ft_rra(t_ps **a);
 void	ft_rrb(t_ps **b);
 void	ft_rrr(t_ps **a, t_ps **b);
-void	nb_to_index(t_ps **a);
+t_ps	*nb_to_index(t_ps **a);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:19:04 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/17 14:52:51 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/03/22 14:58:03 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,17 @@ int	main(int argc, char **argv)
 	// 	content = 9;
 	// 	ft_stack(&b, content);
 	// }
-	nb_to_index(&a);
+	b = nb_to_index(&a);
 	while (a)
 	{
 		ft_printf("a: %d\n", a->content);
 		a = a->next;
 	}
-	(void)b;
-	// while (b)
-	// {
-	// 	ft_printf("b: %d\n", b->content);
-	// 	b = b->next;
-	// }
+	ft_printf("\n");
+	while (b)
+	{
+		ft_printf("b: %d\n", b->content);
+		b = b->next;
+	}
 	return (0);
 }
