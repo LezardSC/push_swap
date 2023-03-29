@@ -3,33 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   nb_to_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 07:39:32 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/22 17:38:09 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/03/29 09:30:59 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void	change_into_index(t_ps **a, int	*array)
+static	void	change_into_index(t_ps **a, int	*array, int array_size)
 {
 	int		i;
 	t_ps	*tmp;
 
 	tmp = *a;
-	while (tmp->next != NULL)
+	while (tmp != NULL)
 	{
 		i = 0;
-		while (array[i])
+		while (i < array_size)
 		{
 			if (tmp->content == array[i])
 			{
 				tmp->content = i;
-				tmp = tmp->next;
+				break ;
 			}
 			i++;
 		}
+		tmp = tmp->next;
 	}
 }
 
@@ -40,7 +41,7 @@ static int	*ft_linked_list_to_array(t_ps *lst_index, int size)
 	int		i;
 
 	tmp = lst_index;
-	array = malloc(sizeof(int) * size + 1);
+	array = malloc(sizeof(int) * (size + 1));
 	i = 0;
 	while (tmp != NULL)
 	{
@@ -48,6 +49,7 @@ static int	*ft_linked_list_to_array(t_ps *lst_index, int size)
 		tmp = tmp->next;
 		i++;
 	}
+	array[i] = 0;
 	return (array);
 }
 
@@ -90,19 +92,19 @@ static void	bubble_swap(t_ps **head)
 	}
 }
 
-t_ps	*nb_to_index(t_ps **a)
+void	nb_to_index(t_ps **a)
 {
 	t_ps	*sorted_list;
 	int		*index_lst;
 	int		size_array;
 
 	if (!a || !(*a))
-		return (NULL);
+		return ;
 	size_array = ft_lstsize_ps(*a);
 	index_lst = malloc(sizeof(int) * size_array + 1);
 	sorted_list = copy_list(*a);
 	bubble_swap(&sorted_list);
 	index_lst = ft_linked_list_to_array(sorted_list, size_array);
-	change_into_index(a, index_lst);
-	return (sorted_list);
+	change_into_index(a, index_lst, ft_tablen(index_lst));
+	free(index_lst);
 }

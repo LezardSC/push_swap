@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:19:04 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/22 14:58:03 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/03/29 09:58:07 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	t_ps	*a;
 	t_ps	*b;
-//	int		i;
+	int		nb_arg;
 	int		content;
 
 	if (argc < 2)
@@ -28,28 +28,25 @@ int	main(int argc, char **argv)
 	}
 	a = NULL;
 	b = NULL;
-//	i = argc;
+	nb_arg = argc - 1;
 	while (--argc > 0)
 	{
 		content = atoi(argv[argc]);
 		ft_stack(&a, content);
 	}
-	// while (--i > 0)
-	// {
-	// 	content = 9;
-	// 	ft_stack(&b, content);
-	// }
-	b = nb_to_index(&a);
+	nb_to_index(&a);
+	which_sort(nb_arg, &a, &b);
 	while (a)
 	{
 		ft_printf("a: %d\n", a->content);
 		a = a->next;
 	}
 	ft_printf("\n");
-	while (b)
-	{
-		ft_printf("b: %d\n", b->content);
-		b = b->next;
-	}
+	(void)b;
+	// while (b)
+	// {
+	// 	ft_printf("b: %d\n", b->content);
+	// 	b = b->next;
+	// }
 	return (0);
 }

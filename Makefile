@@ -6,7 +6,7 @@
 #    By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 08:46:55 by jrenault          #+#    #+#              #
-#    Updated: 2023/03/01 08:02:13 by jrenault         ###   ########lyon.fr    #
+#    Updated: 2023/03/29 09:48:07 by jrenault         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC			 			= 	main.c \
 							ft_reverse_rotate.c \
 							nb_to_index.c \
 							ft_radix.c \
+							which_sort.c \
 
 OBJECTS			    	= ${addprefix ${BUILD_DIR},${SRC:.c=.o}}
 	
