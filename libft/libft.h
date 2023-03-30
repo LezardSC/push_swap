@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:09:59 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 09:16:23 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/03/30 13:34:39 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ char			*ft_strrchr(const char *string, int searchedCh);
 char			*ft_strtrim(char const *s1, char const *set);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			ft_swap_int(int *a, int *b);
-int				ft_tablen(int *tab);
 int				ft_tolower(int ch);
 int				ft_toupper(int ch);
 

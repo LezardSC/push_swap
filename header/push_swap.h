@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 09:49:59 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/03/29 14:43:36 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,9 @@ void	ft_rrb(t_ps **b);
 void	ft_rrr(t_ps **a, t_ps **b);
 void	nb_to_index(t_ps **a);
 int		which_sort(int argc, t_ps **a, t_ps **b);
+void	sort_three(t_ps **a);
+void	sort_four(t_ps **a, t_ps **b);
+void	sort_five(t_ps **a, t_ps **b);
+void	ft_radix(t_ps **a, t_ps **b);
 
 #endif

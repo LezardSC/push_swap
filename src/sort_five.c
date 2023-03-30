@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_two.c                                         :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 09:52:19 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 09:56:36 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/03/29 14:44:35 by jrenault          #+#    #+#             */
+/*   Updated: 2023/03/29 14:45:04 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_two(t_ps **a, t_ps **b)
+void	sort_five(t_ps **a, t_ps **b)
 {
-	ft_sa(a);
+	(void)a;
+	(void)b;
 }

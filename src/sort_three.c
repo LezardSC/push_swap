@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tablen.c                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 09:14:55 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 09:15:58 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/03/29 13:39:16 by jrenault          #+#    #+#             */
+/*   Updated: 2023/03/29 14:06:07 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_tablen(int *tab)
+void	sort_three(t_ps **a)
 {
-	int	i;
+	t_ps	*lst1;
+	t_ps	*lst2;
+	int		switched;
 
-	i = 0;
-	if (!tab)
-		return (0);
-	while (tab[i])
-		i++;
-	return (i);
+	if (*a == NULL || (*a)->next == NULL)
+		return ;
+	switched = 1;
+	lst2 = NULL;
+	while (switched)
+	{
+		switched = 0;
+		lst1 = *a;
+		while (lst1->next != lst2)
+		{
+			if (lst1->content > lst1->next->content)
+			{
+				ft_sa(a);
+				switched = 1;
+			}
+			lst1 = lst1->next;
+		}
+			lst2 = lst1;
+	}
 }

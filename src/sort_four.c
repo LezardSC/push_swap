@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   which_sort.c                                       :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 09:46:24 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 14:39:00 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/03/29 13:39:33 by jrenault          #+#    #+#             */
+/*   Updated: 2023/03/29 13:43:44 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	which_sort(int nb_arg, t_ps **a, t_ps **b)
+void	sort_four(t_ps **a, t_ps **b)
 {
-	if (nb_arg == 1)
-		return (0);
-	else if (nb_arg == 2)
-	{
-		if ((*a)->content > (*a)->next->content)
-			ft_sa(a);
-		return (0);
-	}
-	else if (nb_arg == 3)
-		sort_three(a);
-	else if (nb_arg == 4)
-		sort_four(a, b);
-	else if (nb_arg == 5)
-		sort_five(a, b);
-	else
-		ft_radix(a, b);
-	return (0);
+	(void)a;
+	(void)b;
 }

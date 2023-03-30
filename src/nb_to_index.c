@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 07:39:32 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 09:30:59 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/03/30 11:35:20 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,20 @@
 static	void	change_into_index(t_ps **a, int	*array, int array_size)
 {
 	int		i;
+	int		found;
 	t_ps	*tmp;
 
 	tmp = *a;
 	while (tmp != NULL)
 	{
 		i = 0;
-		while (i < array_size)
+		found = 0;
+		while (i < array_size && found == 0)
 		{
 			if (tmp->content == array[i])
 			{
 				tmp->content = i;
-				break ;
+				found = 1;
 			}
 			i++;
 		}
@@ -41,7 +43,7 @@ static int	*ft_linked_list_to_array(t_ps *lst_index, int size)
 	int		i;
 
 	tmp = lst_index;
-	array = malloc(sizeof(int) * (size + 1));
+	array = malloc(sizeof(int) * size);
 	i = 0;
 	while (tmp != NULL)
 	{
@@ -49,7 +51,6 @@ static int	*ft_linked_list_to_array(t_ps *lst_index, int size)
 		tmp = tmp->next;
 		i++;
 	}
-	array[i] = 0;
 	return (array);
 }
 
@@ -105,6 +106,6 @@ void	nb_to_index(t_ps **a)
 	sorted_list = copy_list(*a);
 	bubble_swap(&sorted_list);
 	index_lst = ft_linked_list_to_array(sorted_list, size_array);
-	change_into_index(a, index_lst, ft_tablen(index_lst));
+	change_into_index(a, index_lst, size_array);
 	free(index_lst);
 }
