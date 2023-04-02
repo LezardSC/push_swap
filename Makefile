@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 08:46:55 by jrenault          #+#    #+#              #
-#    Updated: 2023/03/29 14:43:46 by jrenault         ###   ########lyon.fr    #
+#    Updated: 2023/04/02 17:08:29 by lezard           ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ DIR						= src/
 SRC			 			= 	main.c \
 							check_error.c \
 							push_swap_utils.c \
+							parsing_ps.c \
 							ft_stack.c \
 							ft_swap.c \
 							ft_push.c \
@@ -32,9 +33,7 @@ SRC			 			= 	main.c \
 							nb_to_index.c \
 							ft_radix.c \
 							which_sort.c \
-							sort_three.c \
-							sort_four.c \
-							sort_five.c \
+							short_sort.c \
 
 OBJECTS			    	= ${addprefix ${BUILD_DIR},${SRC:.c=.o}}
 	

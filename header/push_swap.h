@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 14:43:36 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/02 17:13:38 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_push_swap
 
 int		main(int argc, char **argv);
 int		check_error(char **argv);
+int		ft_atoi_push_swap(char *str);
 void	ft_stack(t_ps **lst, int content);
 int		ft_lstsize_ps(t_ps *lst);
 void	ft_lstadd_front_ps(t_ps **lst, t_ps *new);
@@ -42,11 +43,10 @@ void	ft_rr(t_ps **a, t_ps **b);
 void	ft_rra(t_ps **a);
 void	ft_rrb(t_ps **b);
 void	ft_rrr(t_ps **a, t_ps **b);
-void	nb_to_index(t_ps **a);
-int		which_sort(int argc, t_ps **a, t_ps **b);
-void	sort_three(t_ps **a);
-void	sort_four(t_ps **a, t_ps **b);
-void	sort_five(t_ps **a, t_ps **b);
 void	ft_radix(t_ps **a, t_ps **b);
+void	nb_to_index(t_ps **a);
+int		parsing_ps(t_ps **a, int argc, char **argv);
+void	short_sort(t_ps **a, t_ps **b, int nb_arg);
+int		which_sort(int argc, t_ps **a, t_ps **b);
 
 #endif

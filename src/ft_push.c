@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 11:35:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/02/26 13:24:26 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/02 16:10:17 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ static void	ft_push(t_ps **lst1, t_ps **lst2)
 
 void	ft_pa(t_ps **a, t_ps **b)
 {
-	ft_push(a, b);
+	ft_push(b, a);
 	ft_printf("pa\n");
 }
 
 void	ft_pb(t_ps **a, t_ps **b)
 {
-	ft_push(b, a);
+	ft_push(a, b);
 	ft_printf("pb\n");
 }

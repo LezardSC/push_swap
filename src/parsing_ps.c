@@ -1,19 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   parsing_ps.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 14:44:35 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/29 14:45:04 by jrenault         ###   ########lyon.fr   */
+/*   Created: 2023/04/02 17:06:12 by lezard            #+#    #+#             */
+/*   Updated: 2023/04/02 17:18:08 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_five(t_ps **a, t_ps **b)
+int	parsing_ps(t_ps **a, int argc, char **argv)
 {
-	(void)a;
-	(void)b;
+	int	content;
+
+	if (argc == 2)
+	{
+		ft_printf("ok");
+	}
+	if (argc > 2)
+	{
+		while (--argc > 0)
+		{
+			content = atoi(argv[argc]);
+			ft_stack(a, content);
+		}
+	}
+	return (0);
 }
