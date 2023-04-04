@@ -6,7 +6,7 @@
 /*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/02 17:13:38 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/04 11:47:49 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef struct s_push_swap
 
 int		main(int argc, char **argv);
 int		check_error(char **argv);
+int		check_error_before_split(char *numbers);
 int		ft_atoi_push_swap(char *str);
 void	ft_stack(t_ps **lst, int content);
 int		ft_lstsize_ps(t_ps *lst);

@@ -6,11 +6,25 @@
 /*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:24:16 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/02 17:00:20 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/04 13:06:17 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	check_error_before_split(char *numbers)
+{
+	int	i;
+
+	i = 0;
+	while (numbers[i])
+	{
+		if (numbers[i] != ' ' && (numbers[i] <= '0' && numbers[i] >= '9'))
+			return (1);
+		i++;
+	}
+	return (0);
+}
 
 static int	check_only_numbers(char **argv)
 {
