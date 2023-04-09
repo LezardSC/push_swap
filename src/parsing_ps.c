@@ -6,7 +6,7 @@
 /*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:06:12 by lezard            #+#    #+#             */
-/*   Updated: 2023/04/04 13:13:58 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/09 14:50:04 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	split_argv(t_ps **a, char **argv)
 		return (1);
 	}
 	i = ft_strlen_doublechar(numbers);
-	while (--i > 0)
+	while (--i >= 0)
 	{
 		content = atoi(numbers[i]);
 		ft_stack(a, content);
