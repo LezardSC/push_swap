@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   short_sort.c                                       :+:      :+:    :+:   */
+/*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 14:44:35 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/02 16:58:04 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/10 16:04:01 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int	is_already_sorted(t_ps *a)
 	return (0);
 }
 
-void	short_sort(t_ps **a, t_ps **b, int nb_arg)
+void	sort_five(t_ps **a, t_ps **b, int nb_arg)
 {
 	int		min;
 	int		i;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+         #
+#    By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 08:46:55 by jrenault          #+#    #+#              #
-#    Updated: 2023/04/04 11:42:30 by lezard           ###   ########lyon.fr    #
+#    Updated: 2023/04/10 16:03:48 by jrenault         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,8 @@ SRC			 			= 	main.c \
 							nb_to_index.c \
 							ft_radix.c \
 							which_sort.c \
-							short_sort.c \
+							sort_five.c \
+							sort_three.c \
 
 OBJECTS			    	= ${addprefix ${BUILD_DIR},${SRC:.c=.o}}
 	

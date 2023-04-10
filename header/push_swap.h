@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/04 11:47:49 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/10 15:37:52 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ void	ft_rrr(t_ps **a, t_ps **b);
 void	ft_radix(t_ps **a, t_ps **b);
 void	nb_to_index(t_ps **a);
 int		parsing_ps(t_ps **a, int argc, char **argv);
-void	short_sort(t_ps **a, t_ps **b, int nb_arg);
+void	sort_three(t_ps **a);
+void	sort_five(t_ps **a, t_ps **b, int nb_arg);
 int		which_sort(int argc, t_ps **a, t_ps **b);
 
 #endif
