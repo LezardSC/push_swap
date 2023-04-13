@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_reverse_rotate.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/26 15:48:54 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/10 16:16:03 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/13 15:27:16 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ static void	ft_reverse_rotate(t_ps **lst)
 
 	if (!lst || !(*lst)->next)
 		return ;
-	last_to_first = *lst;
-	while (last_to_first->next)
-		last_to_first = last_to_first->next;
 	tmp = *lst;
-	*lst = (*lst)->next;
-	last_to_first->next = tmp;
+	while (tmp->next && tmp->next->next)
+		tmp = tmp->next;
+	last_to_first = tmp->next;
 	tmp->next = NULL;
+	last_to_first->next = *lst;
+	*lst = last_to_first;
 }
 
 void	ft_rra(t_ps **a)

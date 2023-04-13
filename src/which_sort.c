@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   which_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 09:46:24 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/10 15:40:01 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/13 16:41:13 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int	which_sort(int nb_arg, t_ps **a, t_ps **b)
 	}
 	else if (nb_arg == 3)
 		sort_three(a);
-	else if (nb_arg >= 4 && nb_arg <= 5)
+	else if (nb_arg == 4)
+		sort_four(a, b, nb_arg);
+	else if (nb_arg == 5)
 		sort_five(a, b, nb_arg);
 	else
 		ft_radix(a, b);

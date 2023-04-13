@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_five.c                                        :+:      :+:    :+:   */
+/*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/29 14:44:35 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/13 16:38:42 by lezard           ###   ########lyon.fr   */
+/*   Created: 2023/04/13 16:39:39 by lezard            #+#    #+#             */
+/*   Updated: 2023/04/13 16:42:28 by lezard           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ static int	is_already_sorted(t_ps *a)
 	return (0);
 }
 
-void	sort_five(t_ps **a, t_ps **b, int nb_arg)
+void	sort_four(t_ps **a, t_ps **b, int nb_arg)
 {
 	int		min_index;
 	int		min;
@@ -65,7 +65,7 @@ void	sort_five(t_ps **a, t_ps **b, int nb_arg)
 	i = 0;
 	if (is_already_sorted(*a) == 0)
 		return ;
-	while (i < 2)
+	while (i < 1)
 	{
 		min = find_min_and_index(*a, 0);
 		min_index = find_min_and_index(*a, 1);
@@ -80,6 +80,5 @@ void	sort_five(t_ps **a, t_ps **b, int nb_arg)
 		i++;
 	}
 	sort_three(a);
-	ft_pa(a, b);
 	ft_pa(a, b);
 }
