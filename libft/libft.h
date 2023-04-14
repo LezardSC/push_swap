@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 15:09:59 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/04 13:13:21 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/14 15:34:24 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void			ft_putchar_fd(char c, int fd);
 void			ft_putchar(char c);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr_base(int nbr, char *base);
+int				ft_putnbr_base_int(int nbr, char *base);
 void			ft_putnbr_base_ul(unsigned long nbr, char *base);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putnbr(int nb);

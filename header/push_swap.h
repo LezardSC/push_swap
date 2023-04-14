@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/13 16:40:32 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/14 16:59:44 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include "limits.h"
 
 # include "../libft/libft.h"
+
+typedef struct s_radix
+{
+}			t_radix;
 
 typedef struct s_push_swap
 {
