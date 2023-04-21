@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/14 16:59:44 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/21 16:28:51 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ int		ft_atoi_push_swap(char *str);
 void	ft_stack(t_ps **lst, int content);
 int		ft_lstsize_ps(t_ps *lst);
 void	ft_lstadd_front_ps(t_ps **lst, t_ps *new);
-void	ft_lstadd_back_ps(t_ps **lst, t_ps *new);
-void	ft_lstdelone_ps(t_list *lst, void (*del)(void *));
-t_ps	*ft_lstlast_ps(t_ps *lst);
+void	ft_lstclear_ps(t_ps *lst);
 void	ft_sa(t_ps **a);
 void	ft_sb(t_ps **b);
 void	ft_ss(t_ps **a, t_ps **b);

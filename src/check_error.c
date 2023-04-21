@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:24:16 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/04 13:06:17 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/21 16:33:33 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ int	check_error_before_split(char *numbers)
 	while (numbers[i])
 	{
 		if (numbers[i] != ' ' && (numbers[i] <= '0' && numbers[i] >= '9'))
-			return (1);
+			return (free(numbers), 1);
 		i++;
 	}
+	free(numbers);
 	return (0);
 }
 

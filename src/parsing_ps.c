@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:06:12 by lezard            #+#    #+#             */
-/*   Updated: 2023/04/10 14:22:12 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/21 16:41:42 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ static int	split_argv(t_ps **a, char **argv)
 	if (check_error(numbers) == 1)
 	{
 		ft_printf("Error\n");
+		free_tab(numbers);
 		return (1);
 	}
 	i = ft_strlen_doublechar(numbers);
@@ -30,6 +31,7 @@ static int	split_argv(t_ps **a, char **argv)
 		content = atoi(numbers[i]);
 		ft_stack(a, content);
 	}
+	free_tab(numbers);
 	return (0);
 }
 

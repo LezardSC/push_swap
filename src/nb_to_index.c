@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 07:39:32 by jrenault          #+#    #+#             */
-/*   Updated: 2023/03/30 11:35:20 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/21 16:46:46 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ static int	*ft_linked_list_to_array(t_ps *lst_index, int size)
 
 	tmp = lst_index;
 	array = malloc(sizeof(int) * size);
+	if (!array)
+		return (0);
 	i = 0;
 	while (tmp != NULL)
 	{
@@ -61,6 +63,8 @@ static t_ps	*copy_list(t_ps *lst)
 	if (!lst)
 		return (NULL);
 	new_list = malloc(sizeof(t_ps));
+	if (!new_list)
+		return (NULL);
 	new_list->content = lst->content;
 	new_list->next = copy_list(lst->next);
 	return (new_list);
@@ -102,10 +106,11 @@ void	nb_to_index(t_ps **a)
 	if (!a || !(*a))
 		return ;
 	size_array = ft_lstsize_ps(*a);
-	index_lst = malloc(sizeof(int) * size_array + 1);
 	sorted_list = copy_list(*a);
 	bubble_swap(&sorted_list);
 	index_lst = ft_linked_list_to_array(sorted_list, size_array);
 	change_into_index(a, index_lst, size_array);
 	free(index_lst);
+	index_lst = NULL;
+	ft_lstclear_ps(sorted_list);
 }

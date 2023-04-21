@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:19:04 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/18 18:10:33 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/21 16:30:48 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,6 @@ int	main(int argc, char **argv)
 	parsing_ps(&a, argc, argv);
 	nb_to_index(&a);
 	which_sort(nb_arg, &a, &b);
-	while (a)
-	{
-		ft_printf("a: %d\n", a->content);
-		a = a->next;
-	}
+	ft_lstclear_ps(a);
 	return (0);
 }
