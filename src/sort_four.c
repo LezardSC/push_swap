@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lezard <lezard@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 16:39:39 by lezard            #+#    #+#             */
-/*   Updated: 2023/04/13 16:42:28 by lezard           ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 14:15:57 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,23 +39,6 @@ static int	find_min_and_index(t_ps *a, int button)
 		return (min_index);
 }
 
-static int	is_already_sorted(t_ps *a)
-{
-	t_ps	*tmp;
-
-	tmp = a;
-	while (tmp)
-	{
-		if (tmp->next == NULL)
-			break ;
-		if (tmp->content < tmp->next->content)
-			tmp = tmp->next;
-		else
-			return (1);
-	}
-	return (0);
-}
-
 void	sort_four(t_ps **a, t_ps **b, int nb_arg)
 {
 	int		min_index;
@@ -63,8 +46,6 @@ void	sort_four(t_ps **a, t_ps **b, int nb_arg)
 	int		i;
 
 	i = 0;
-	if (is_already_sorted(*a) == 0)
-		return ;
 	while (i < 1)
 	{
 		min = find_min_and_index(*a, 0);

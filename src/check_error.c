@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:24:16 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/21 16:33:33 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 17:48:51 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,24 @@ int	check_error_before_split(char *numbers)
 	while (numbers[i])
 	{
 		if (numbers[i] != ' ' && (numbers[i] <= '0' && numbers[i] >= '9'))
-			return (free(numbers), 1);
+			return (1);
 		i++;
 	}
-	free(numbers);
 	return (0);
 }
 
-static int	check_only_numbers(char **argv)
+static int	check_only_numbers(char **numbers)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = 0;
-	while (argv[i])
+	while (numbers[i])
 	{
-		while (argv[i][j])
+		while (numbers[i][j])
 		{
-			if ((argv[i][j] > '9' || argv[i][j] < '0') && argv[i][0] != '-')
+			if ((numbers[i][j] > '9' || numbers[i][j] < '0') && numbers[i][0] != '-')
 				return (1);
 			j++;
 		}
@@ -48,32 +47,33 @@ static int	check_only_numbers(char **argv)
 	return (0);
 }
 
-static int	check_int(char **argv)
+static int	check_int(char **numbers)
 {
 	int	i;
 
-	i = 1;
-	while (argv[i])
+	i = 0;
+	while (numbers[i])
 	{
-		if (ft_atoi_push_swap(argv[i]) > INT_MAX)
+		if (ft_atoi_push_swap(numbers[i]) > INT_MAX
+			|| ft_atoi_push_swap(numbers[i]) < INT_MIN)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-static int	check_duplicates(char **argv)
+static int	check_duplicates(char **numbers)
 {
 	int	i;
 	int	j;
 
-	i = 1;
+	i = 0;
 	j = i + 1;
-	while (j != i && argv[i])
+	while (j != i && numbers[i])
 	{
-		while (j != i && argv[j])
+		while (j != i && numbers[j])
 		{
-			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
+			if (ft_atoi(numbers[i]) == ft_atoi(numbers[j]))
 				return (1);
 			j++;
 		}
@@ -83,13 +83,13 @@ static int	check_duplicates(char **argv)
 	return (0);
 }
 
-int	check_error(char **argv)
+int	check_error(char **numbers)
 {
-	if (check_only_numbers(argv) == 1)
+	if (check_only_numbers(numbers) == 1)
 		return (1);
-	if (check_int(argv) == 1)
+	if (check_int(numbers) == 1)
 		return (1);
-	if (check_duplicates(argv) == 1)
+	if (check_duplicates(numbers) == 1)
 		return (1);
 	return (0);
 }

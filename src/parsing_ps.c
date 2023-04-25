@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 17:06:12 by lezard            #+#    #+#             */
-/*   Updated: 2023/04/21 16:41:42 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 17:39:25 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,27 @@ static int	split_argv(t_ps **a, char **argv)
 	return (0);
 }
 
+static int	is_single_number(char *number)
+{
+	size_t	i;
+
+	i = 0;
+	if (number[0] == '-')
+		i++;
+	while (number[i] >= '0' && number[i] <= '9')
+		i++;
+	if (i == ft_strlen(number))
+		return (1);
+	return (0);
+}
+
 int	parsing_ps(t_ps **a, int argc, char **argv)
 {
 	int	content;
 
 	if (argc == 2)
 	{
-		if (argv[1][0] >= '0' && argv[1][0] <= '9' && argv[1][1] == '\0')
+		if (is_single_number(argv[1]) == 1)
 			return (0);
 		else if (check_error_before_split(argv[1]) == 0)
 			split_argv(a, argv);
@@ -50,7 +64,7 @@ int	parsing_ps(t_ps **a, int argc, char **argv)
 	}
 	if (argc > 2)
 	{
-		if (check_error(argv) == 1)
+		if (check_error(argv + 1) == 1)
 		{
 			ft_printf("Error\n");
 			return (0);

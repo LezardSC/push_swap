@@ -6,7 +6,7 @@
 /*   By: jrenault <jrenault@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 09:25:03 by jrenault          #+#    #+#             */
-/*   Updated: 2023/04/21 16:28:51 by jrenault         ###   ########lyon.fr   */
+/*   Updated: 2023/04/25 14:34:35 by jrenault         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_push_swap
 int		main(int argc, char **argv);
 int		check_error(char **argv);
 int		check_error_before_split(char *numbers);
-int		ft_atoi_push_swap(char *str);
+long	ft_atoi_push_swap(char *str);
 void	ft_stack(t_ps **lst, int content);
 int		ft_lstsize_ps(t_ps *lst);
 void	ft_lstadd_front_ps(t_ps **lst, t_ps *new);

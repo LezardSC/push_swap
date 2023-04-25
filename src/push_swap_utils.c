@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	ft_atoi_push_swap(char *str)
+long	ft_atoi_push_swap(char *str)
 {
 	int		i;
 	long	nb;
